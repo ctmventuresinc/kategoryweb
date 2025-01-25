@@ -17,7 +17,7 @@ const carlsAnswers: UserAnswers = {
   animal: "Bat",
   place: "Balthazar",
   thing: "Boobs",
-  movie: "Brentwood",
+  movie: "Batman",
 };
 
 export function GameResults({ userAnswers }: GameResultsProps) {
@@ -79,7 +79,7 @@ export function GameResults({ userAnswers }: GameResultsProps) {
   const handleShare = () => {
     const shareText = `Kategory Day 1\n${scores.total} Points\n${scores.details
       .map(([category, _, score]) => `${getScoreEmoji(score)} ${category}`)
-      .join("\n")}\nhttps://ogurgdz0ydtpwatz.vercel.app/`;
+      .join("\n")}\nhttps://kategoryweb.vercel.app/`;
 
     navigator.clipboard.writeText(shareText);
     setShowToast(true);
