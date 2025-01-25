@@ -39,8 +39,24 @@ export default function WordGame() {
 
   const handleContinue = () => {
     // Store the current answer
+    const category = categories[currentCategoryIndex]
+      .toLowerCase()
+      .replace(/\//g, "")
+      .replace(/\s+/g, "") as keyof UserAnswers;
+    setUserAnswers((prev) => ({
+      ...prev,
+      [category]: currentAnswer,
+    }));
+
     // Clear input and move to next category
-    // set game completed to true when done with all categories
+    setCurrentAnswer("");
+    if (currentCategoryIndex < categories.length - 1) {
+      setCurrentCategoryIndex((prev) => prev + 1);
+    } else {
+      // This is the last category, so we need to set gameCompleted to true
+      // after we've stored the answer
+      setGameCompleted(true);
+    }
   };
 
   if (gameCompleted) {

@@ -4,15 +4,14 @@ export enum Category {
   Animal = "Animal",
   Place = "Place",
   Thing = "Thing",
-  TvOrMovie = "TV/Movie",
+  movie = "Movie",
 }
 
 export interface UserAnswers {
-  boyName?: string
-  girlName?: string
-  animal?: string
-  place?: string
-  thing?: string
-  tvOrMovie?: string
+  boyName?: string;
+  girlName?: string;
+  animal?: string;
+  place?: string;
+  thing?: string;
+  movie?: string;
 }
-
