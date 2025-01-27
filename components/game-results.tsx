@@ -77,7 +77,7 @@ export function GameResults({ userAnswers }: GameResultsProps) {
   };
 
   const handleShare = () => {
-    const shareText = `Kategorie Day 1\n${scores.total} Points\n${scores.details
+    const shareText = `Kategorie Day 2\n${scores.total} Points\n${scores.details
       .map(([category, _, score]) => `${getScoreEmoji(score)} ${category}`)
       .join("\n")}\nhttps://kategoryweb.vercel.app/`;
 

@@ -71,7 +71,9 @@ export default function WordGame() {
           <p className="text-gray-500 font-semibold text-lg">
             {currentCategoryIndex + 1}/{categories.length}
           </p>
-          <p className="font-semibold text-2xl">You are battling Los</p>
+          <p className="font-semibold text-2xl">
+            You are setting the game Francis
+          </p>
           <p className="text-red-500 font-semibold text-4xl">
             00:{timeRemaining < 10 ? "0" : ""}
             {timeRemaining}
