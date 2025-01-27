@@ -9,10 +9,10 @@ import { GameResults } from "../components/game-results";
 export default function WordGame() {
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(45);
+  const [timeRemaining, setTimeRemaining] = useState(100);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
-  const startingLetter = "B";
+  const startingLetter = "H"; // 1-26-2025 was B.  1-27-2025 was H
   const inputRef = useRef<HTMLInputElement>(null);
 
   const categories = Object.values(Category);
