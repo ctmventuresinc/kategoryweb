@@ -103,7 +103,7 @@ export function GameResults({ userAnswers }: GameResultsProps) {
               <div className="flex items-center gap-2">
                 {score === 0 && <span className="text-red-500">no answer</span>}
                 {score === 5 && (
-                  <span className="text-blue-500">same as los</span>
+                  <span className="text-blue-500">same as francis</span>
                 )}
                 {score === 10 && <span className="text-green-500">unique</span>}
 
