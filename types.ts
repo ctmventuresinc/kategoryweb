@@ -4,7 +4,7 @@ export enum Category {
   Animal = "Animal",
   Place = "Place",
   Thing = "Thing",
-  movie = "TV/Movie",
+  movie = "Movie",
 }
 
 export interface UserAnswers {
