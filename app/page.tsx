@@ -5,7 +5,7 @@ import { Category, type UserAnswers } from "../types";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { GameResults } from "../components/game-results";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics, track } from "@vercel/analytics/react";
 
 export default function WordGame() {
   const [currentAnswer, setCurrentAnswer] = useState("");
@@ -52,6 +52,13 @@ export default function WordGame() {
   }, []);
 
   const handleContinue = () => {
+    // Track the answer submission
+    track("answer_submitted", {
+      category: categories[currentCategoryIndex],
+      hasAnswer: Boolean(currentAnswer),
+      timeRemaining,
+    });
+
     // Store the current answer
     const category = categories[currentCategoryIndex]
       .toLowerCase()
