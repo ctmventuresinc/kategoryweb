@@ -12,6 +12,8 @@ export default function WordGame() {
   const [timeRemaining, setTimeRemaining] = useState(44);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
+  const [startTime, setStartTime] = useState<Date | null>(null);
+  const [timeTaken, setTimeTaken] = useState<number | null>(null);
   const startingLetter = "L";
   // 1-28-2025 was L
   // 1-27-2025 was H
@@ -21,6 +23,8 @@ export default function WordGame() {
   const categories = Object.values(Category);
 
   useEffect(() => {
+    setStartTime(new Date()); // Set the start time when the component mounts
+
     const timer = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 1) {
@@ -59,11 +63,17 @@ export default function WordGame() {
       // This is the last category, so we need to set gameCompleted to true
       // after we've stored the answer
       setGameCompleted(true);
+      if (startTime) {
+        const endTime = new Date();
+        setTimeTaken(
+          Math.floor((endTime.getTime() - startTime.getTime()) / 1000)
+        );
+      }
     }
   };
 
   if (gameCompleted) {
-    return <GameResults userAnswers={userAnswers} />;
+    return <GameResults userAnswers={userAnswers} timeTaken={timeTaken} />;
   }
 
   return (

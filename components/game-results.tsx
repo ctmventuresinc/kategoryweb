@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 interface GameResultsProps {
   userAnswers: UserAnswers;
+  timeTaken: number | null;
 }
 
 const carlsAnswers: UserAnswers = {
@@ -20,7 +21,7 @@ const carlsAnswers: UserAnswers = {
   movie: "Lonely Planet",
 };
 
-export function GameResults({ userAnswers }: GameResultsProps) {
+export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
   const [showToast, setShowToast] = useState(false);
   const [timeUntilNext, setTimeUntilNext] = useState("");
 
@@ -77,7 +78,11 @@ export function GameResults({ userAnswers }: GameResultsProps) {
   };
 
   const handleShare = () => {
-    const shareText = `Kategorie Day 3\n${scores.total} Points\n${scores.details
+    const timeTakenText =
+      timeTaken !== null ? `Completed in ${timeTaken} seconds` : "";
+    const shareText = `Kategorie Day 3\n${
+      scores.total
+    } Points\n${timeTakenText}\n${scores.details
       .map(([category, _, score]) => `${getScoreEmoji(score)} ${category}`)
       .join("\n")}\nhttps://kategoryweb.vercel.app/`;
 
