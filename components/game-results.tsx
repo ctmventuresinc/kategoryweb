@@ -77,7 +77,7 @@ export function GameResults({ userAnswers }: GameResultsProps) {
   };
 
   const handleShare = () => {
-    const shareText = `Kategorie Day 2\n${scores.total} Points\n${scores.details
+    const shareText = `Kategorie Day 3\n${scores.total} Points\n${scores.details
       .map(([category, _, score]) => `${getScoreEmoji(score)} ${category}`)
       .join("\n")}\nhttps://kategoryweb.vercel.app/`;
 
@@ -103,7 +103,7 @@ export function GameResults({ userAnswers }: GameResultsProps) {
               <div className="flex items-center gap-2">
                 {score === 0 && <span className="text-red-500">no answer</span>}
                 {score === 5 && (
-                  <span className="text-blue-500">same as francis</span>
+                  <span className="text-blue-500">same as los' mom</span>
                 )}
                 {score === 10 && <span className="text-green-500">unique</span>}
 

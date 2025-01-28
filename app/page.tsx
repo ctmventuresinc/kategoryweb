@@ -9,10 +9,13 @@ import { GameResults } from "../components/game-results";
 export default function WordGame() {
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(46);
+  const [timeRemaining, setTimeRemaining] = useState(100);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
-  const startingLetter = "H"; // 1-26-2025 was B.  1-27-2025 was H
+  const startingLetter = "L";
+  // 1-28-2025 was L
+  // 1-27-2025 was H
+  // 1-26-2025 was B.
   const inputRef = useRef<HTMLInputElement>(null);
 
   const categories = Object.values(Category);
@@ -71,7 +74,7 @@ export default function WordGame() {
           <p className="text-gray-500 font-semibold text-lg">
             {currentCategoryIndex + 1}/{categories.length}
           </p>
-          <p className="font-semibold text-2xl">You are battling Francis</p>
+          <p className="font-semibold text-2xl">You are battling Los' Mom</p>
           <p className="text-red-500 font-semibold text-4xl">
             00:{timeRemaining < 10 ? "0" : ""}
             {timeRemaining}
