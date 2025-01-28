@@ -23,20 +23,26 @@ export default function WordGame() {
   const categories = Object.values(Category);
 
   useEffect(() => {
-    setStartTime(new Date()); // Set the start time when the component mounts
+    const storedDate = localStorage.getItem("gameCompletedDate");
+    const today = new Date().toISOString().split("T")[0];
 
-    const timer = setInterval(() => {
-      setTimeRemaining((prev) => {
-        if (prev <= 1) {
-          setGameCompleted(true);
-          clearInterval(timer);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    if (storedDate === today) {
+      setGameCompleted(true);
+    } else {
+      setStartTime(new Date());
+      const timer = setInterval(() => {
+        setTimeRemaining((prev) => {
+          if (prev <= 1) {
+            setGameCompleted(true);
+            clearInterval(timer);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
 
-    return () => clearInterval(timer);
+      return () => clearInterval(timer);
+    }
   }, []);
 
   useEffect(() => {
@@ -60,8 +66,6 @@ export default function WordGame() {
     if (currentCategoryIndex < categories.length - 1) {
       setCurrentCategoryIndex((prev) => prev + 1);
     } else {
-      // This is the last category, so we need to set gameCompleted to true
-      // after we've stored the answer
       setGameCompleted(true);
       if (startTime) {
         const endTime = new Date();
@@ -69,6 +73,11 @@ export default function WordGame() {
           Math.floor((endTime.getTime() - startTime.getTime()) / 1000)
         );
       }
+      // Store the completion date
+      localStorage.setItem(
+        "gameCompletedDate",
+        new Date().toISOString().split("T")[0]
+      );
     }
   };
 
