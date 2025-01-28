@@ -12,12 +12,12 @@ interface GameResultsProps {
 }
 
 const carlsAnswers: UserAnswers = {
-  boyName: "Hector",
-  girlName: "Helina",
-  animal: "Horse",
-  place: "Holland",
-  thing: "Hands",
-  movie: "Harold and the purple crayon",
+  boyName: "Langston",
+  girlName: "Lorna",
+  animal: "Leaopard",
+  place: "Lagoon",
+  thing: "Lizard",
+  movie: "Lonely Planet",
 };
 
 export function GameResults({ userAnswers }: GameResultsProps) {

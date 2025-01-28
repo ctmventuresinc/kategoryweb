@@ -9,7 +9,7 @@ import { GameResults } from "../components/game-results";
 export default function WordGame() {
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(100);
+  const [timeRemaining, setTimeRemaining] = useState(44);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const startingLetter = "L";
