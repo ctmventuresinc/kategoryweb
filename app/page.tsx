@@ -10,6 +10,8 @@ import { Analytics, track } from "@vercel/analytics/react";
 export default function WordGame() {
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
+
+  //time for the game today
   const [timeRemaining, setTimeRemaining] = useState(20);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
@@ -91,7 +93,13 @@ export default function WordGame() {
   };
 
   if (gameCompleted) {
-    return <GameResults userAnswers={userAnswers} timeTaken={timeTaken} />;
+    return (
+      <GameResults
+        userAnswers={userAnswers}
+        timeTaken={timeTaken}
+        timeRemaining={timeRemaining}
+      />
+    );
   }
 
   return (

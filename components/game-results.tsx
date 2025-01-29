@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 interface GameResultsProps {
   userAnswers: UserAnswers;
   timeTaken: number | null;
+  timeRemaining: number;
 }
 
 const carlsAnswers: UserAnswers = {
@@ -21,7 +22,11 @@ const carlsAnswers: UserAnswers = {
   movie: "Alien",
 };
 
-export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
+export function GameResults({
+  userAnswers,
+  timeTaken,
+  timeRemaining,
+}: GameResultsProps) {
   const [showToast, setShowToast] = useState(false);
   const [timeUntilNext, setTimeUntilNext] = useState("");
 
@@ -79,7 +84,9 @@ export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
 
   const handleShare = () => {
     const timeTakenText =
-      timeTaken !== null ? `Completed in ${timeTaken} seconds` : "";
+      timeTaken !== null
+        ? `Completed in ${timeTaken} seconds`
+        : `Completed in: ${timeRemaining} seconds`;
     const shareText = `Kategorie Day 4\n${
       scores.total
     } Points\n${timeTakenText}\n${scores.details
