@@ -13,12 +13,12 @@ interface GameResultsProps {
 }
 
 const carlsAnswers: UserAnswers = {
-  boyName: "Langston",
-  girlName: "Lorna",
-  animal: "Leaopard",
-  place: "Lagoon",
-  thing: "Lizard",
-  movie: "Lonely Planet",
+  boyName: "Aaron",
+  girlName: "Alexa",
+  animal: "Alligator",
+  place: "Alabama",
+  thing: "Apple",
+  movie: "Alien",
 };
 
 export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
@@ -80,7 +80,7 @@ export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
   const handleShare = () => {
     const timeTakenText =
       timeTaken !== null ? `Completed in ${timeTaken} seconds` : "";
-    const shareText = `Kategorie Day 3\n${
+    const shareText = `Kategorie Day 4\n${
       scores.total
     } Points\n${timeTakenText}\n${scores.details
       .map(([category, _, score]) => `${getScoreEmoji(score)} ${category}`)
@@ -108,7 +108,7 @@ export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
               <div className="flex items-center gap-2">
                 {score === 0 && <span className="text-red-500">no answer</span>}
                 {score === 5 && (
-                  <span className="text-blue-500">same as los&apos; mom</span>
+                  <span className="text-blue-500">same as devin</span>
                 )}
                 {score === 10 && <span className="text-green-500">unique</span>}
 
