@@ -72,6 +72,12 @@ export default function WordGame() {
       [category]: currentAnswer,
     }));
 
+    // Store the completion date as soon as the user interacts
+    localStorage.setItem(
+      "gameCompletedDate",
+      new Date().toISOString().split("T")[0]
+    );
+
     // Clear input and move to next category
     setCurrentAnswer("");
     if (currentCategoryIndex < categories.length - 1) {
@@ -84,11 +90,6 @@ export default function WordGame() {
           Math.floor((endTime.getTime() - startTime.getTime()) / 1000)
         );
       }
-      // Store the completion date
-      localStorage.setItem(
-        "gameCompletedDate",
-        new Date().toISOString().split("T")[0]
-      );
     }
   };
 
