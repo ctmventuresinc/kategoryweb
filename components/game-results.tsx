@@ -80,7 +80,7 @@ export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
   const handleShare = () => {
     const timeTakenText =
       timeTaken !== null ? `Completed in ${timeTaken} seconds` : "";
-    const shareText = `Kategorie Day 4\n${
+    const shareText = `Kategorie Day 5\n${
       scores.total
     } Points\n${timeTakenText}\n${scores.details
       .map(([category, _, score]) => `${getScoreEmoji(score)} ${category}`)
