@@ -13,8 +13,8 @@ interface GameResultsProps {
 }
 
 const carlsAnswers: UserAnswers = {
-  boyName: "Aaron",
-  girlName: "Alexa",
+  boyName: "George",
+  girlName: "Grace",
   animal: "Alligator",
   place: "Alabama",
   thing: "Apple",
