@@ -84,7 +84,7 @@ export function GameResults({ userAnswers, timeTaken }: GameResultsProps) {
       scores.total
     } Points\n${timeTakenText}\n${scores.details
       .map(([category, _, score]) => `${getScoreEmoji(score)} ${category}`)
-      .join("\n")}\nhttps://kategoryweb.vercel.app/`;
+      .join("\n")}\nhttps://www.kategorie.xyz/`;
 
     navigator.clipboard.writeText(shareText);
     setShowToast(true);
