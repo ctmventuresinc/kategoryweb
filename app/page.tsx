@@ -10,12 +10,13 @@ import { Analytics, track } from "@vercel/analytics/react";
 export default function WordGame() {
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(25);
+  const [timeRemaining, setTimeRemaining] = useState(50);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [startTime, setStartTime] = useState<Date | null>(null);
   const [timeTaken, setTimeTaken] = useState<number | null>(null);
-  const startingLetter = "C";
+  const startingLetter = "Y";
+  // 2-08-2025 was Y
   // 2-07-2025 was C
   // 2-06-2025 was J
   // 2-05-2025 was P
