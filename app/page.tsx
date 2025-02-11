@@ -15,7 +15,8 @@ export default function WordGame() {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [startTime, setStartTime] = useState<Date | null>(null);
   const [timeTaken, setTimeTaken] = useState<number | null>(null);
-  const startingLetter = "M";
+  const startingLetter = "K";
+  // 2-11-2025 was K
   // 2-10-2025 was M
   // 2-09-2025 was F
   // 2-08-2025 was Y
@@ -27,6 +28,7 @@ export default function WordGame() {
   // 1-28-2025 was L
   // 1-27-2025 was H
   // 1-26-2025 was B.
+
   const inputRef = useRef<HTMLInputElement>(null);
 
   const categories = Object.values(Category);
